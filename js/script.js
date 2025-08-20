@@ -1,3 +1,55 @@
+// Navigation toggler for mobile view
+document.addEventListener("DOMContentLoaded", function () {
+  const toggler = document.querySelector(".navbar-toggler");
+  const navMenu = document.getElementById("navbarNav");
+  const downloadBtn = document.getElementById("downloadCvBtn");
+  const container = document.getElementById("navbarContainer");
+
+  // Simpan referensi elemen sebelum tombol (supaya tahu posisi asli)
+  const originalNextSibling = downloadBtn.nextElementSibling;
+
+  // toggle collapse
+  toggler.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  // auto close menu ketika klik link
+  const navLinks = navMenu.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 991) {
+        navMenu.classList.remove("show");
+      }
+    });
+  });
+
+  // fungsi pindahkan tombol
+  function handleResize() {
+    if (window.innerWidth <= 991) {
+      if (!navMenu.contains(downloadBtn)) {
+        navMenu.appendChild(downloadBtn);
+        downloadBtn.classList.add("mt-3");
+      }
+    } else {
+      if (!container.contains(downloadBtn) || navMenu.contains(downloadBtn)) {
+        // kembalikan tombol ke posisi semula
+        if (originalNextSibling) {
+          container.insertBefore(downloadBtn, originalNextSibling);
+        } else {
+          container.appendChild(downloadBtn); // fallback jika tidak ada sibling
+        }
+        downloadBtn.classList.remove("mt-3");
+      }
+    }
+  }
+
+  // jalankan pertama kali + setiap resize
+  handleResize();
+  window.addEventListener("resize", handleResize);
+});
+
+
+
 // modal image loading with delay
 const imageModal = document.getElementById('imageModal');
   const loading = document.getElementById('loading');

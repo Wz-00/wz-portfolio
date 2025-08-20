@@ -15,22 +15,25 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/modal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- <style>
+  <style>
     html {
       scroll-behavior: smooth;
     }
-  </style> -->
+  </style>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- Navbar -->
   <nav class="navbar shadow-md navbar-expand-lg">
-    <div class="container-fluid">
+    <div class="container-fluid" id="navbarContainer">
       <a class="navbar-brand ms-3" href="#">
         <span>Wildan</span> <span>JK</span>
+      </a>
+      <!-- Toggle button -->
+      <a class="navbar-toggler d-lg-none me-3" type="button">
+        <iconify-icon icon="fluent-mdl2:collapse-menu" width="40" style="color: #d2d2d2;"></iconify-icon>
       </a>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav gap-4">
@@ -41,7 +44,7 @@
           <li class="nav-item"><a class="nav-link fw-medium scroll-link" href="#contact">Contact</a></li>
         </ul>
       </div>
-      <a href="asset/CV- Wildan.pdf" class="btn btn-cv me-3" download="CV-wildan">Download CV</a>
+      <a href="asset/CV-Wildan(eng).pdf" class="btn btn-cv me-3" download="CV-wildan" id="downloadCvBtn">Download CV</a>
     </div>
   </nav>
 
@@ -51,7 +54,7 @@
       <div class="row">
         <div class="col-12 col-md-5 col-lg-4 mb-3 my-auto px-4">
           <div class="profile-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile Image" class="mx-auto d-block img-fluid rounded-circle">
+            <img src="asset/ms.png" alt="Profile Image" class="mx-auto d-block img-fluid">
           </div>
         </div>
         <div class="col-12 col-md-7 col-lg-8 mb-3 d-flex align-items-center px-4">

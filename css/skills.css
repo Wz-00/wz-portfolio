@@ -1,0 +1,81 @@
+:root {
+  --outer-radius: 1em;
+  --padding: 0.5em;
+  --inner-radius: calc(var(--outer-radius) - var(--padding));
+}
+
+.skill-section {
+  background-color: #f8f9fa;
+  margin: 2rem 0;
+  padding: 3rem 0;
+
+}
+
+.skill-header {
+  text-align: center;
+  margin: 4rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+.skill-header h2 {
+  font-size: 2.3rem;
+  color: #333;
+}
+
+.skill-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.skill-section {
+  background-color: #f8f9fa;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 15px 0;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  padding: 15px 0;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  height: 160px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #495057;
+  border: 2px solid black;
+  border-radius: 16px;
+  margin: 0 3.5rem;
+}
+
+.marquee-item:hover {
+  box-shadow: 0px 0px 15px 3px rgba(13,11,11,0.51);
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+/* Pause animasi saat hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}

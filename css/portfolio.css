@@ -1,0 +1,75 @@
+.portfolio-section {
+    background-color: #f8f9fa;
+    margin: 2rem 0;
+    padding: 3rem 0;
+}
+.portfolio-header{
+    text-align: center;
+    margin: 4rem 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.portfolio-header h2 {
+    font-size: 2.3rem;
+}
+
+.portfolio-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.project-description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.github-link {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.github-link:hover {
+    color: #C23DC0;
+}
+
+.project-image img{
+    margin-bottom:4rem ;
+}
+
+.project-image img, .blurred img {
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0px 0px 30px 7px rgba(13,11,11,0.51);
+}
+
+.project-image img:hover, .blurred:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.blurred-image {
+    filter: blur(3px);
+    transition: filter 0.3s ease;
+}
+.blurred-text {
+    z-index: 2;
+    position: relative;
+    top: -50%;
+    text-align: center;
+    padding: 0.75rem 0;
+}
+.blurred-text h2 {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 0.65rem 0;
+    border-top: white 2px solid;
+    border-bottom: white 2px solid;
+}

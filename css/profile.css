@@ -1,0 +1,26 @@
+.profile-section {
+    background-color: #0009FF;
+    min-height: 100vh;
+}
+
+.profile-image img{
+    object-fit: fill; 
+    border-radius: 50%; 
+    width: 100%;
+}
+.profile-text .role{
+    color: #d2d2d2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+.profile-text .name{
+    color: #d2d2d2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.profile-text .description{
+    color: #d2d2d2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+}

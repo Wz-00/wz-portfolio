@@ -79,3 +79,14 @@
 .marquee-container:hover .marquee-content {
   animation-play-state: paused;
 }
+@media (max-width: 768px) {
+  .skill-header{
+    padding: 0 1rem;
+  }
+  .skill-header h2 {
+    font-size: calc(1.5rem + 1vw);
+  }
+  .skill-header p {
+    font-size: calc(1rem + 0.5vw);
+  }
+}

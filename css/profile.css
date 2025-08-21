@@ -5,10 +5,13 @@
 .profile-section .container {
     padding: 5rem 0;
 }
+.profile-section .row {
+    margin: 0 29px;
+}
 .profile-image img{
     object-fit: cover; 
     aspect-ratio: 1/1;
-    height: 100%;
+    height: auto;
     border-radius: 50%;
 }
 .profile-text .role{
@@ -26,4 +29,37 @@
     color: #d2d2d2;
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
+}
+.social-icons iconify-icon {
+    color: #d2d2d2;
+    font-size: 3.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+    .profile-text .role{
+        font-size: calc(1.5rem + 0.75vw);
+    }
+    .profile-text .name{
+        font-size: calc(2rem + 1vw);
+    }
+    .profile-text .description{
+        font-size: calc(1rem + 0.5vw);
+    }
+    .social-icons iconify-icon {
+        font-size: calc(2rem + 1vw);
+    }
+}
+@media (max-width: 767px) {
+    .profile-text .role, .profile-text .name, .profile-text .description {
+        text-align: center;
+    }
+}
+@media (min-width: 768px) {
+    .profile-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

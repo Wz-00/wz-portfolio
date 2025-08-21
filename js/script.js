@@ -1,3 +1,35 @@
+// rearranging portfolio columns based on screen size
+function rearrangeColumns() {
+  const rows = document.querySelectorAll("#portfolioRow"); 
+
+  rows.forEach(row => {
+    const textCols = row.querySelectorAll(".textCol");
+    const imageCols = row.querySelectorAll(".imageCol");
+
+    // pastikan jumlah text = jumlah image
+    for (let i = 0; i < textCols.length; i++) {
+      const textCol = textCols[i];
+      const imageCol = imageCols[i];
+
+      if (window.innerWidth < 768) {
+        // ukuran small -> gambar di atas, teks di bawah
+        if (imageCol.nextElementSibling !== textCol) {
+          row.insertBefore(imageCol, textCol);
+        }
+      } else {
+        // ukuran md ke atas -> teks di kiri, gambar di kanan
+        if (textCol.nextElementSibling !== imageCol) {
+          row.insertBefore(textCol, imageCol);
+        }
+      }
+    }
+  });
+}
+
+window.addEventListener("load", rearrangeColumns);
+window.addEventListener("resize", rearrangeColumns);
+
+
 // Navigation toggler for mobile view
 document.addEventListener("DOMContentLoaded", function () {
   const toggler = document.querySelector(".navbar-toggler");
@@ -116,26 +148,4 @@ const myModal = document.getElementById('myModal')
 myModal.addEventListener('shown.bs.modal', () => {
   myInput.focus()
 })
-// rearranging portfolio columns based on screen size
-function rearrangeColumns() {
-    const row = document.getElementById("portfolioRow");
-    const textCol = document.getElementById("textCol");
-    const imageCol = document.getElementById("imageCol");
 
-    if (window.innerWidth < 768) {
-      // ukuran small -> gambar di atas, teks di bawah
-      if (row.firstElementChild !== imageCol) {
-        row.insertBefore(imageCol, textCol);
-      }
-    } else {
-      // ukuran md ke atas -> teks di kiri, gambar di kanan
-      if (row.firstElementChild !== textCol) {
-        row.insertBefore(textCol, imageCol);
-      }
-    }
-  }
-
-
-  window.addEventListener("load", rearrangeColumns);
-  window.addEventListener("resize", rearrangeColumns);
-  

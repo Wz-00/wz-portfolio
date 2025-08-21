@@ -73,3 +73,18 @@
     border-top: white 2px solid;
     border-bottom: white 2px solid;
 }
+@media (max-width: 768px) {
+    .portfolio-header h2 {
+        font-size: calc(1.5rem + 1vw);
+    }
+    .portfolio-header p {
+        font-size: calc(1rem + 0.5vw);
+    }
+    .project-description {
+        font-size: calc(0.9rem + 0.3vw);
+    }
+    .github-link {
+        font-size: calc(1rem + 0.2vw);
+    }
+    
+}

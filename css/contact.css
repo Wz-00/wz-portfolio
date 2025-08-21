@@ -26,3 +26,12 @@
   border: 1px solid #ccc;
   resize: none;
 }
+
+@media (max-width: 768px) {
+  .contact-section h2 {
+    font-size: calc(1.5rem + 1vw);
+  }
+  .contact-section p {
+    font-size: calc(1rem + 0.5vw);
+  }
+}

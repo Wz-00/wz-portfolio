@@ -13,6 +13,8 @@
     aspect-ratio: 1/1;
     height: auto;
     border-radius: 50%;
+    background-color: white;
+    object-position: 0px -70px;
 }
 .profile-text .role{
     color: #d2d2d2;

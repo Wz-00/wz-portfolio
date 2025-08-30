@@ -116,23 +116,31 @@ const imageModal = document.getElementById('imageModal');
     }, 1000);
   });
 // smooth scroll for navbar links
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.scroll-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        const yOffset = -80; // offset navbar
-        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-        window.scrollTo({
-          top: y,
-          behavior: 'smooth'
-        });
-      }
-    });
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
   });
 });
+
 // navbar scroll effect
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
@@ -148,4 +156,5 @@ const myModal = document.getElementById('myModal')
 myModal.addEventListener('shown.bs.modal', () => {
   myInput.focus()
 })
+
 

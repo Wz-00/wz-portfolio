@@ -1,3 +1,31 @@
+function compressImage() {
+  const img = document.getElementById("original");
+  
+  // Buat elemen canvas
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  
+  // Atur ukuran canvas sesuai gambar asli
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  
+  // Gambar ulang ke canvas
+  ctx.drawImage(img, 0, 0);
+
+  // Export ulang dengan kualitas 0.5 (50%)
+  const compressedDataUrl = canvas.toDataURL("image/jpeg", 0.5);
+  
+  // Tampilkan hasil
+  document.getElementById("compressed").src = compressedDataUrl;
+
+  // Jika mau simpan, bisa dibuat link download
+  // const a = document.createElement("a");
+  // a.href = compressedDataUrl;
+  // a.download = "compressed.jpg";
+  // a.click();
+}
+
+
 // rearranging portfolio columns based on screen size
 function rearrangeColumns() {
   const rows = document.querySelectorAll("#portfolioRow"); 
